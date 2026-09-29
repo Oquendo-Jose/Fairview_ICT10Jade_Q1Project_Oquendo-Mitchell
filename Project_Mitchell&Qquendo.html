@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Grocery</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module"
+        src="https://pyscript.net/releases/2024.1.1/core.js">
+    </script>
+
+    <style>
+
+    .Words {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+    }
+
+    header {
+        width: 100%;
+        box-sizing: border-box;
+        background: #92f0fc;
+        padding: 20px 60px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    header h1 {
+        margin: 0;
+        color: #207185;
+    }
+
+    h2 {
+        color: #207185;
+    }
+
+    button {
+        background-color: rgb(233, 255, 107);
+        color: #207185;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: rgb(212, 241, 45);
+    }
+
+    .products {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .product-card {
+        width: 220px;
+        background-color: white;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-card h3,
+    .product-card h4,
+    .product-card h5,
+    .product-card h6,
+    .product-card h7 {
+        margin: 5px 0 15px;
+        color: #207185;
+    }
+
+    .Images {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .product-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .product-bottom span {
+        font-size: 18px;
+        font-weight: bold;
+        color: #207185;
+    }
+
+    .cart-button {
+        margin-top: 30px;
+        background-color: #207185;
+        color: white;
+    }
+
+    footer {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 30px;
+        background: #92f0fc;
+        margin-top: 60px;
+        color: #0c0c0c;
+    }
+
+    </style>
+</head>
+
+<body>
+
+<div class="Words">
+
+    <header>
+        <h1>Online Grocery</h1>
+    </header>
+
+    <h2>Items:</h2>
+
+    <div class="products">
+
+        <div class="product-card">
+
+            <h4>cappuccino</h4>
+
+            <img class="Images"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKf_XrPYLJB3jmRCgW_jRlWFj-cPJyoYvFIIUrHtRfew&s=10"
+            alt="Cappuccino">
+
+            <div class="product-bottom">
+
+                <span>50 PHP</span>
+
+<button onclick="location.href='Cappuccino.html'">
+    Add to Cart
+</button>
+
+            </div>
+        </div>
+
+
+        <div class="product-card">
+
+            <h4>latte</h4>
+
+            <img class="Images"
+            src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Caffe_Latte_at_Pulse_Cafe.jpg/250px-Caffe_Latte_at_Pulse_Cafe.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+            alt="Latte">
+
+            <div class="product-bottom">
+
+                <span>99 PHP</span>
+
+                <button onclick="location.href='Latte.html'">
+                    Add to Cart
+                </button>
+
+            </div>
+        </div>
+
+
+        <div class="product-card">
+
+            <h4>mocha</h4>
+
+            <img class="Images"
+            src="https://gatherforbread.com/wp-content/uploads/2014/10/Dark-Chocolate-Mocha-Square.jpg"
+            alt="Mocha">
+
+            <div class="product-bottom">
+
+                <span>129 PHP</span>
+
+                <button onclick="location.href='Mocha.html'">
+                    Add to Cart
+                </button>
+
+            </div>
+        </div>
+
+
+        <div class="product-card">
+
+            <h4>Frappuccino</h4>
+
+            <img class="Images"
+            src="https://pamsdailydish.com/wp-content/uploads/2024/06/MOCHA-FRAPPUCCINO-TOP-.jpg"
+            alt="Frappuccino">
+
+            <div class="product-bottom">
+
+                <span>149 PHP</span>
+
+                <button onclick="location.href='Frappuccino.html'">
+                    Add to Cart
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <br><br>
+
+    <div>
+        <button class="cart-button" onclick="location.href='Cart.html'">
+            My Cart
+        </button>
+    </div>
+
+
+    <footer>
+        @2026 Online Grocery. All rights reserved.
+    </footer>
+
+</div>
+
+<script type="py" src="./main.py"></script>
+
+</body>
+</html>
+```
