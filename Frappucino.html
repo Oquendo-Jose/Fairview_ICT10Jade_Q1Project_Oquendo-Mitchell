@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee SKU Generator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #c7dcf7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            width: 380px;
+            padding: 5px;
+            border-radius: 10px;
+            
+        }
+
+        h1 {
+            text-align: center;
+            color: #101c31;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: italic;
+            color: #444;
+        }
+
+        select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #cec1c1;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 8px;
+            background: #516072;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1a3042;
+        }
+
+        .result {
+            margin-top: 28px;
+            padding: 23px;
+            background: #dfe2f1;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .sku {
+            font-size: 28px;
+            font-weight: italic;
+            color: #103150;
+            margin-top: 8px;
+        }
+
+        .copy-button {
+            background: #47648b;
+            margin-top: 15px;
+        }
+
+        .copy-button:hover {
+            background: #253e5f;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1> SKU Generator</h1>
+
+    <label for="coffeeType">Coffee Type</label>
+
+    <select id="coffeeType">
+        <option value="FRA">Frappuccino</option>
+
+    </select>
+
+
+    <label for="size">Size</label>
+
+    <select id="size">
+        <option value="S">Small</option>
+        <option value="M">Medium</option>
+        <option value="L">Large</option>
+    </select>
+
+
+    <button onclick="generateSKU()">
+        Generate SKU
+    </button>
+
+
+    <div class="result">
+
+        <div>Your SKU:</div>
+
+        <div class="sku" id="skuResult">
+            ---
+        </div>
+
+        <button class="copy-button" onclick="copySKU()">
+            Copy SKU
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    let skuCounter = 1;
+
+    function generateSKU() {
+
+        const coffeeType =
+            document.getElementById("coffeeType").value;
+
+        const size =
+            document.getElementById("size").value;
+
+        const number =
+            String(skuCounter).padStart(3, "0");
+
+        const sku =
+            `${coffeeType}-${size}-${number}`;
+
+        document.getElementById("skuResult").textContent = sku;
+
+        skuCounter++;
+    }
+
+
+    function copySKU() {
+
+        const sku =
+            document.getElementById("skuResult").textContent;
+
+        if (sku === "---") {
+            alert("Please generate an SKU first.");
+            return;
+        }
+
+        navigator.clipboard.writeText(sku);
+
+        alert("SKU copied: " + sku);
+    }
+
+</script>
+
+</body>
+</html>
